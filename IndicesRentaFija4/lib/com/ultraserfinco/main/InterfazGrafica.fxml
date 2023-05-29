@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="353.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ultraserfinco.main.MainGeneradorIndices">
+   <top>
+      <Label alignment="CENTER" prefHeight="110.0" prefWidth="353.0" text="Generador de Índices Renta Fija" textAlignment="CENTER" textFill="#797474" wrapText="true" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Garuda" size="29.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <VBox alignment="CENTER_LEFT" prefHeight="161.0" prefWidth="353.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Carpeta con los archivos de Infovalmer:" />
+            <SplitPane dividerPositions="0.8433048433048433" prefHeight="134.0" prefWidth="353.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <TextField fx:id="carpetaInfoVText" layoutX="4.0" layoutY="5.0" prefHeight="26.0" prefWidth="285.0" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Button fx:id="carpetaInfoVButton" layoutX="7.0" layoutY="5.0" mnemonicParsing="false" onAction="#clickCarpetaInfoV" prefHeight="26.0" prefWidth="37.0" text="..." />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+            <Label prefWidth="78.0" text="Guardar en:" />
+            <SplitPane dividerPositions="0.8433048433048433" prefHeight="133.0" prefWidth="353.0">
+               <items>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="23.0" prefWidth="292.0">
+                     <children>
+                        <TextField fx:id="guardarEnText" layoutX="4.0" layoutY="5.0" prefHeight="26.0" prefWidth="285.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Button fx:id="guardarEnButton" layoutX="7.0" layoutY="5.0" mnemonicParsing="false" onAction="#clickGuardarEn" prefHeight="26.0" prefWidth="37.0" text="..." />
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="16.0" prefWidth="177.0" text="Fecha Inicial:" />
+                  <Label prefHeight="16.0" prefWidth="178.0" text="Fecha Final:" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <DatePicker id="fechaInicialPicker" fx:id="fechaInicialPicker" editable="false" prefHeight="26.0" prefWidth="178.0">
+                     <opaqueInsets>
+                        <Insets right="20.0" top="20.0" />
+                     </opaqueInsets>
+                  </DatePicker>
+                  <DatePicker id="fechaFinalPicker" fx:id="fechaFinalPicker" prefHeight="26.0" prefWidth="179.0">
+                     <opaqueInsets>
+                        <Insets right="20.0" top="20.0" />
+                     </opaqueInsets>
+                  </DatePicker>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <VBox alignment="CENTER" prefHeight="139.0" prefWidth="353.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="66.0" prefWidth="353.0">
+               <children>
+                  <Button fx:id="generarButton" mnemonicParsing="false" onAction="#clickGenerar" prefHeight="26.0" prefWidth="151.0" text="Generar" />
+                  <Separator opacity="0.0" orientation="VERTICAL" prefHeight="66.0" prefWidth="13.0" />
+                  <Button fx:id="ayudaButton" mnemonicParsing="false" onAction="#clickAyuda" prefHeight="26.0" prefWidth="164.0" text="Ayuda" />
+               </children>
+            </HBox>
+            <ProgressBar fx:id="progressBar" prefWidth="200.0" progress="0.0" />
+            <Label fx:id="progressLabel" alignment="CENTER" text=" ">
+               <font>
+                  <Font size="10.0" />
+               </font></Label>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>
